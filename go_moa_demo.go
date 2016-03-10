@@ -38,4 +38,5 @@ func main() {
 	//kill掉的server
 	<-ch
 	app.DestoryApplication()
+
 }
