@@ -5,16 +5,16 @@
 [env]
 name="moa-demo"
 runMode="dev"
-bindAddress=":13000"
+bindAddress="172.30.3.124:13000"
 #可以是momokeeper或者zookeeper
 registryType="momokeeper" 
 
 #registry的管理	
 [registry]
 	[registry.dev]
-		hosts="test_moa_admin.momo.com:10010,test_moa_lookup.momo.com:10010"
+		hosts="test_moa_admin.momo.com:10020,test_moa_lookup.momo.com:10010"
 	[registry.online]
-		hosts="moa_admin.momo.com:10010,moa_lookup.momo.com:10010" 
+		hosts="moa_admin.momo.com:10020,moa_lookup.momo.com:10010" 
 
 #cluster的服务器
 [clusters]
