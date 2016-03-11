@@ -19,8 +19,14 @@ type Session struct {
 	GetSessionByUid func(uid string) (string, error)
 }
 
+type GroupResult struct {
+	ec     string
+	em     string
+	result map[string][]string
+}
+
 type UserGroup struct {
-	GetGroups func(momoid string, index, count int32, withscores bool)
+	GetGroups func(momoid string, index, count int32, withscores bool) (GroupResult, error)
 }
 
 func main() {
