@@ -22,7 +22,7 @@ type Session struct {
 type GroupResult struct {
 	ec     string
 	em     string
-	result map[string][]string
+	result []string
 }
 
 type UserGroup struct {
