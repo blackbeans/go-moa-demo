@@ -26,7 +26,7 @@ type GroupResult struct {
 }
 
 type UserGroup struct {
-	GetGroups func(momoid string, index, count int32, withscores bool) (GroupResult, error)
+	GetGroups func(momoid string, index, count int32, withscores bool) (string, error)
 }
 
 func main() {
