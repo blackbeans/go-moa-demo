@@ -19,7 +19,34 @@ type Session struct {
 	GetSessionByUid func(uid string) (string, error)
 }
 
+type UserGroup struct {
+	GetGroups func(momoid string, index, count int32, withscores bool)
+}
+
 func main() {
+	serviceUri := "/service/php_moa/user_group"
+	consumer := client.NewMoaConsumer("go_moa_client.toml",
+		[]proxy.Service{proxy.Service{
+			ServiceUri: serviceUri,
+			Interface:  &UserGroup{}},
+		})
+
+	h := consumer.GetService(serviceUri).(*UserGroup)
+	a, err := h.GetGroups("113695605", 0, 10, true)
+
+	fmt.Printf("GetGroups|%s|%v\n", a, err)
+
+	// h := consumer.GetService("/service/bibi/go-moa").(*CGoMoaDemo)
+
+	// for i := 0; i < 10000; i++ {
+	// 	a, err := h.GetDemoName("/service/user-profile", "redis")
+
+	// 	fmt.Printf("GetDemoName|%s|%v\n", a, err)
+	// }
+
+}
+
+func testSession() {
 	consumer := client.NewMoaConsumer("go_moa_client.toml",
 		[]proxy.Service{proxy.Service{
 			ServiceUri: "/service/bibi-session",
@@ -30,13 +57,4 @@ func main() {
 	a, err := h.GetSessionByUid("1543")
 
 	fmt.Printf("GetSessionByUid|%s|%v\n", a, err)
-
-	// h := consumer.GetService("/service/bibi/go-moa").(*CGoMoaDemo)
-
-	// for i := 0; i < 10000; i++ {
-	// 	a, err := h.GetDemoName("/service/user-profile", "redis")
-
-	// 	fmt.Printf("GetDemoName|%s|%v\n", a, err)
-	// }
-
 }
