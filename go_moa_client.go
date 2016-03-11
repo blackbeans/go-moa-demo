@@ -22,7 +22,7 @@ type Session struct {
 type GroupResult struct {
 	ec     string
 	em     string
-	result []string
+	result map[string][]int64
 }
 
 type UserGroup struct {
@@ -38,7 +38,7 @@ func main() {
 		})
 
 	h := consumer.GetService(serviceUri).(*UserGroup)
-	a, err := h.GetGroups("113695605", 0, 10, false)
+	a, err := h.GetGroups("113695605", 0, 10, true)
 
 	fmt.Printf("GetGroups|%s|%v\n", a, err)
 
