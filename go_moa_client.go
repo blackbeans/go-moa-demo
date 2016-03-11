@@ -38,7 +38,7 @@ func main() {
 		})
 
 	h := consumer.GetService(serviceUri).(*UserGroup)
-	a, err := h.GetGroups("100647", 0, 10, true)
+	a, err := h.GetGroups("100647", 0, 10, false)
 
 	fmt.Printf("GetGroups|%s|%v\n", a, err)
 
