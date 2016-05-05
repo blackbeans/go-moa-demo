@@ -1,30 +1,30 @@
 package main
 
 import (
-	"git.wemomo.com/bibi/go-moa/core"
-	"git.wemomo.com/bibi/go-moa/proxy"
+	"github.com/blackbeans/go-moa/core"
+	"github.com/blackbeans/go-moa/proxy"
 	"os"
 	"os/signal"
 )
 
-type DemoResult struct {
-	Hosts []string `json:"hosts"`
-	Uri   string   `json:"uri"`
-}
-
 type IGoMoaDemo interface {
-	GetDemoName(serviceUri, proto string) (DemoResult, error)
+	SetName(name string) error
+	Ping() error
 }
 
 type GoMoaDemo struct {
 }
 
-func (self GoMoaDemo) GetDemoName(serviceUri, proto string) (DemoResult, error) {
-	return DemoResult{[]string{"fuck gfw"}, serviceUri}, nil
+func (self GoMoaDemo) SetName(name string) error {
+	return nil
+}
+
+func (self GoMoaDemo) Ping() error {
+	return nil
 }
 
 func main() {
-	app := core.NewApplcation("go_moa_demo.toml", func() []proxy.Service {
+	app := core.NewApplcation("conf/moa_server.toml", func() []proxy.Service {
 		return []proxy.Service{
 			proxy.Service{
 				ServiceUri: "/service/bibi/go-moa",
@@ -32,10 +32,10 @@ func main() {
 				Interface:  (*IGoMoaDemo)(nil)}}
 	})
 
-	//设置启动项
+	//设置?~P??~J?项
 	ch := make(chan os.Signal, 1)
 	signal.Notify(ch, os.Kill)
-	//kill掉的server
+	//kill?~N~I?~Z~Dserver
 	<-ch
 	app.DestoryApplication()
 
