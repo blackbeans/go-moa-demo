@@ -1,7 +1,7 @@
 #!/bin/bash
 go get github.com/naoina/toml
-go get -insecure git.wemomo.com/bibi/go-moa/core
-go get -insecure git.wemomo.com/bibi/go-moa-client/client
+go get github.com/blackbeans/go-moa/core
+go get github.com/blackbeans/go-moa-client/client
 
 
 go build -o demo-server go_moa_demo.go

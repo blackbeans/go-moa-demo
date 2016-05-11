@@ -8,15 +8,16 @@ import (
 )
 
 type IGoMoaDemo interface {
-	SetName(name string) error
+	GetName(name string) (string, error)
 	Ping() error
 }
 
 type GoMoaDemo struct {
 }
 
-func (self GoMoaDemo) SetName(name string) error {
-	return nil
+func (self GoMoaDemo) GetName(name string) (string, error) {
+
+	return "moa", nil
 }
 
 func (self GoMoaDemo) Ping() error {
@@ -24,7 +25,7 @@ func (self GoMoaDemo) Ping() error {
 }
 
 func main() {
-	app := core.NewApplcation("conf/moa_server.toml", func() []proxy.Service {
+	app := core.NewApplcation("moa_server.toml", func() []proxy.Service {
 		return []proxy.Service{
 			proxy.Service{
 				ServiceUri: "/service/bibi/go-moa",

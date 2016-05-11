@@ -2,7 +2,7 @@
     <filter enabled="true">
     <tag>stdout</tag>
     <type>file</type>
-    <property name="filename">./logs/bibi/go-apns-moa/stdout.log</property>
+    <property name="filename">./logs/stdout.log</property>
     <property name="format">[%D %T] [%L] (%S) %M</property>
     <property name="rotate">true</property>
     <property name="maxsize">100M</property>
@@ -14,7 +14,7 @@
   <filter enabled="true">
     <tag>debug</tag>
     <type>file</type>
-    <property name="filename">./logs/bibi/go-apns-moa/apns_debug.log</property>
+    <property name="filename">./logs/apns_debug.log</property>
     <property name="format">[%D %T] [%L] (%S) %M</property>
     <property name="rotate">true</property>
     <property name="maxsize">100M</property>
@@ -28,7 +28,7 @@
     <tag>error</tag>
     <type>file</type>
     <level>ERROR</level>
-    <property name="filename">./logs/bibi/go-apns-moa/stderr.log</property>
+    <property name="filename">./logs/stderr.log</property>
     <!--
        %T - Time (15:04:05 MST)
        %t - Time (15:04)
@@ -50,7 +50,7 @@
     <tag>warn</tag>
     <type>file</type>
     <level>WARNING</level>
-    <property name="filename">./logs/bibi/go-apns-moa/apns_warn.log</property>
+    <property name="filename">./logs/apns_warn.log</property>
     <property name="format">[%D %T] [%L] %M</property>
     <property name="rotate">true</property>
     <property name="maxsize">100M</property>
@@ -62,7 +62,7 @@
     <tag>push_handler</tag>
     <type>file</type>
     <level>INFO</level>
-    <property name="filename">./logs/bibi/go-apns-moa/push_handler.log</property>
+    <property name="filename">./logs/push_handler.log</property>
     <property name="format">[%D %T] [%L] %M</property>
     <property name="rotate">true</property>
     <property name="maxsize">100M</property>
@@ -74,7 +74,7 @@
     <tag>push_client</tag>
     <type>file</type>
     <level>INFO</level>
-    <property name="filename">./logs/bibi/go-apns-moa/push_client.log</property>
+    <property name="filename">./logs/push_client.log</property>
     <property name="format">[%D %T] [%L] %M</property>
     <property name="rotate">true</property>
     <property name="maxsize">100M</property>
@@ -87,7 +87,7 @@
     <tag>apns_pool</tag>
     <type>file</type>
     <level>INFO</level>
-    <property name="filename">./logs/bibi/go-apns-moa/apns_pool.log</property>
+    <property name="filename">./logs/apns_pool.log</property>
     <property name="format">[%D %T] [%L] %M</property>
     <property name="rotate">true</property>
     <property name="maxsize">100M</property>
@@ -99,7 +99,7 @@
     <tag>moa-stat</tag>
     <type>file</type>
     <level>INFO</level>
-    <property name="filename">./logs/bibi/go-apns-moa/moa-stat.log</property>
+    <property name="filename">./logs/moa-stat.log</property>
     <property name="format">[%D %T] [%L] %M</property>
     <property name="rotate">true</property>
     <property name="maxsize">100M</property>
@@ -111,7 +111,7 @@
     <tag>moa-server</tag>
     <type>file</type>
     <level>INFO</level>
-    <property name="filename">./logs/bibi/go-apns-moa/moa-server.log</property>
+    <property name="filename">./logs/moa-server.log</property>
     <property name="format">[%D %T] [%L] %M</property>
     <property name="rotate">true</property>
     <property name="maxsize">100M</property>
