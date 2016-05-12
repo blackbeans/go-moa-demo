@@ -4,7 +4,7 @@ go get github.com/blackbeans/go-moa/core
 go get github.com/blackbeans/go-moa-client/client
 
 
-go build -o demo-server go_moa_demo.go
+go build -o demo-server go_moa_server.go
 
 go build -o demo-client go_moa_client.go
 
